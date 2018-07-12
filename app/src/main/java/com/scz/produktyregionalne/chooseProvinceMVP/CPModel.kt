@@ -1,6 +1,6 @@
 package com.scz.produktyregionalne.chooseProvinceMVP
 
-class CPModel: CPContract.Model {
+class CPModel : CPContract.Model {
 
     override
     fun provinces(): ArrayList<String> {

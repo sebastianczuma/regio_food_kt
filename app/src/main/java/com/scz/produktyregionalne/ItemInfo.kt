@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_item_info.*
 
 
-
 class ItemInfo : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +24,6 @@ class ItemInfo : AppCompatActivity() {
         barwa.text = list[3]
         konsystencja.text = list[4]
         smak.text = list[5]
-
 
 
         var id: Int = this.resources.getIdentifier(whichImage, "drawable", this.packageName)

@@ -1,7 +1,7 @@
 package com.scz.produktyregionalne.chooseProvinceMVP
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import com.scz.produktyregionalne.R
 import com.scz.produktyregionalne.recyclerViews.RvProvinces

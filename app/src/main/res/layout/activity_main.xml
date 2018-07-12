@@ -18,8 +18,9 @@
                 android:id="@+id/top"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center"
+                android:paddingBottom="16dp"
                 android:text="warmińsko-mazurskie"
                 android:textColor="#000"
                 android:textSize="16sp" />
@@ -53,16 +54,15 @@
 
 
         <ImageButton
+            android:id="@+id/categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:id="@+id/categories"
             android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_filter_list_white_24dp"
-            android:background="@android:color/transparent"/>
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_filter_list_white_24dp" />
 
     </android.support.design.bottomappbar.BottomAppBar>
-
 
 
     <android.support.v7.widget.RecyclerView

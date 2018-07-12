@@ -1,6 +1,6 @@
 package com.scz.produktyregionalne.mainMVP
 
-class MainPresenter(view : MainContract.MvpView) : MainContract.Presenter {
+class MainPresenter(view: MainContract.MvpView) : MainContract.Presenter {
     var mView: MainContract.MvpView = view
     var mModel: MainContract.Model = MainModel()
 
@@ -15,5 +15,4 @@ class MainPresenter(view : MainContract.MvpView) : MainContract.Presenter {
     override fun onClickCategories() {
         mView.showCategories(mModel.categories())
     }
-
 }

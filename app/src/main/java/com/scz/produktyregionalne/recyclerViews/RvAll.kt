@@ -2,8 +2,6 @@ package com.scz.produktyregionalne.recyclerViews
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Typeface
-import android.support.v4.content.res.ResourcesCompat
 import android.support.v7.widget.RecyclerView
 import android.util.SparseBooleanArray
 import android.view.LayoutInflater
@@ -34,7 +32,7 @@ class RvAll(val items: ArrayList<String>, val context: Context) : RecyclerView.A
             holder.divider.visibility = View.GONE
         }
 
-        if(items[position].equals("Produkty mleczne") or items[position].equals("Produkty mięsne")) {
+        if (items[position].equals("Produkty mleczne") or items[position].equals("Produkty mięsne")) {
             holder.item.visibility = View.GONE
             holder.divider.visibility = View.VISIBLE
             holder.divider.text = items[position]

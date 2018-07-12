@@ -1,6 +1,6 @@
 package com.scz.produktyregionalne.chooseProvinceMVP
 
-class CPPresenter(view : CPContract.MvpView) : CPContract.Presenter {
+class CPPresenter(view: CPContract.MvpView) : CPContract.Presenter {
     var mView: CPContract.MvpView = view
     var mModel: CPContract.Model = CPModel()
 

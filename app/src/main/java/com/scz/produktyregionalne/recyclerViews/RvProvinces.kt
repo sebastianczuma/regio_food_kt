@@ -24,7 +24,7 @@ class RvProvinces(val items: ArrayList<String>, val context: Context) : Recycler
     override fun onBindViewHolder(holder: VhProvinces, position: Int) {
         holder.provinceName?.text = items.get(position)
 
-        if(position%2 == 0) {
+        if (position % 2 == 0) {
             holder.provinceName.gravity = Gravity.END
         }
 

@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -40,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
-                android:fontFamily="serif"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center_vertical"
                 android:paddingBottom="10dp"
                 android:paddingTop="5dp"
@@ -61,12 +60,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
+                android:fontFamily="@font/worksans_regular"
                 android:padding="16dp"
                 android:text="Produkt wpisany na listę produktów tradycyjnych w dniu 2011-08-25 w kategorii produkty mięsne w woj. dolnośląskim" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center_vertical"
                 android:paddingTop="16dp"
                 android:text="Wygląd"
@@ -76,16 +77,18 @@
 
 
             <TextView
+                android:id="@+id/wyglad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans_regular"
                 android:padding="16dp"
-                android:id="@+id/wyglad"
                 android:text="Farsz ściśle przylegający do naturalnej osłonki. W przekroju widoczna galaretka oraz niewielkie kawałki tłuszczu." />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center_vertical"
                 android:paddingTop="16dp"
                 android:text="Kształt"
@@ -94,10 +97,11 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/ksztalt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
-                android:id="@+id/ksztalt"
+                android:fontFamily="@font/worksans_regular"
                 android:gravity="center_vertical"
                 android:padding="16dp"
                 android:text="Pętka z naturalnych jelit, na przekroju okrągłe. Końcówki zamknięte drewnianą szpilką." />
@@ -105,6 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center_vertical"
                 android:paddingTop="20dp"
                 android:text="Rozmiar"
@@ -114,16 +119,18 @@
 
 
             <TextView
+                android:id="@+id/rozmiar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans_regular"
                 android:padding="16dp"
-                android:id="@+id/rozmiar"
-                android:text="Długość batonu w kiełbaśnicach wynosi od 25 cm do 30 cm. Średnica wędliny mieści się w granicach od około 2,5 cm do 3 cm. Waga pojedynczego pęta wynosi od 0,20 dag do 0,25 dag."/>
+                android:text="Długość batonu w kiełbaśnicach wynosi od 25 cm do 30 cm. Średnica wędliny mieści się w granicach od około 2,5 cm do 3 cm. Waga pojedynczego pęta wynosi od 0,20 dag do 0,25 dag." />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center_vertical"
                 android:paddingTop="16dp"
                 android:text="Barwa"
@@ -132,10 +139,11 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/barwa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
-                android:id="@+id/barwa"
+                android:fontFamily="@font/worksans_regular"
                 android:gravity="center_vertical"
                 android:padding="16dp"
                 android:text="Zewnętrzna warstwa batonu jest koloru od jasnobrązowego do brązowego. Po przekrojeniu plastry mają barwę różową, niekiedy z widocznym jasnobrązowym oczkiem. Barwa tłuszczu koloru białego." />
@@ -143,6 +151,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center_vertical"
                 android:paddingTop="20dp"
                 android:text="Konsystencja"
@@ -152,16 +161,18 @@
 
 
             <TextView
+                android:id="@+id/konsystencja"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans_regular"
                 android:padding="16dp"
-                android:id="@+id/konsystencja"
-                android:text="Konsystencja – miękka i jędrna. Skórka pomarszczona, widoczne są przez nią ziarna pieprzu oraz kawałki mięsa, średnio rozdrobnione i równomiernie rozmieszone."/>
+                android:text="Konsystencja – miękka i jędrna. Skórka pomarszczona, widoczne są przez nią ziarna pieprzu oraz kawałki mięsa, średnio rozdrobnione i równomiernie rozmieszone." />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
+                android:fontFamily="@font/worksans_bold"
                 android:gravity="center_vertical"
                 android:paddingTop="16dp"
                 android:text="Smak"
@@ -170,13 +181,14 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/smak"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#eeeeee"
+                android:fontFamily="@font/worksans_regular"
                 android:gravity="center_vertical"
                 android:padding="16dp"
-                android:id="@+id/smak"
-                android:text="Smak charakterystyczny dla kiełbasy wędzonej – z wyraźnym zapachem wędzenia. Smak lekko słony z wyczuwalnym dodatkiem przypraw."/>
+                android:text="Smak charakterystyczny dla kiełbasy wędzonej – z wyraźnym zapachem wędzenia. Smak lekko słony z wyczuwalnym dodatkiem przypraw." />
 
 
         </LinearLayout>

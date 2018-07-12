@@ -1,6 +1,6 @@
 package com.scz.produktyregionalne.mainMVP
 
-class MainModel: MainContract.Model {
+class MainModel : MainContract.Model {
 
     override
     fun items(): ArrayList<String> {
