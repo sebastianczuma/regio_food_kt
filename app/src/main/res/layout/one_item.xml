@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/item"
+        android:layout_height="88dp">
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ser_kozi_lomnicki" />
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:paddingEnd="8dp"
+                android:paddingStart="16dp"
+                android:layout_toRightOf="@id/image1"
+                android:text="Ser kozi łomnicki"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#bababa"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="112dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Produkty mleczne"
+        android:textColor="#000"
+        android:id="@+id/divider"
+        android:visibility="gone"
+        android:padding="8dp"/>
+
+
+
+</RelativeLayout>
