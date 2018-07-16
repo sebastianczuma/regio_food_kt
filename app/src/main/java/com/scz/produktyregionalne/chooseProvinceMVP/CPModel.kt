@@ -2,8 +2,7 @@ package com.scz.produktyregionalne.chooseProvinceMVP
 
 class CPModel : CPContract.Model {
 
-    override
-    fun provinces(): ArrayList<String> {
+    override fun provinces(): ArrayList<String> {
         val list: ArrayList<String> = ArrayList()
 
         list.add("dolnośląskie")

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), MainContract.MvpView {
             mPresenter.onClickCategories()
         }
 
-        mPresenter.loadItems()
+        mPresenter.loadProducts(intent.getStringExtra("province"))
     }
 
     override

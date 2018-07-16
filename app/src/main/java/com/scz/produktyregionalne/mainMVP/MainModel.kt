@@ -8,11 +8,12 @@ import retrofit2.Callback
 class MainModel : MainContract.Model {
 
     override
-    fun items() {
+    fun downloadProducts(which: String) {
         val list: ArrayList<String> = ArrayList()
 
         val apiService = MainAPI.create()
-        val call = apiService.get()
+        val call = apiService.get(which+".json")
+
         Log.d("REQUEST", call.toString() + "")
 
         call.enqueue(object : Callback<ServerResponse> {

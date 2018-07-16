@@ -8,12 +8,12 @@ interface MainContract {
 
     interface Presenter {
         fun initPresenter()
-        fun loadItems()
+        fun loadProducts(which: String)
         fun onClickCategories()
     }
 
     interface Model {
-        fun items()
+        fun downloadProducts(which: String)
         fun categories(): ArrayList<String>
     }
 }

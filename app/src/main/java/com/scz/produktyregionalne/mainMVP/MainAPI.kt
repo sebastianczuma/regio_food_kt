@@ -4,10 +4,11 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Url
 
 interface MainAPI {
-    @GET("0/dolnoslaskie.json")
-    fun get(): Call<ServerResponse>
+    @GET
+    fun get(@Url url: String): Call<ServerResponse>
 
     companion object Factory {
         val BASE_URL = "https://produkty-regionalne.firebaseio.com/wojewodztwa/"
