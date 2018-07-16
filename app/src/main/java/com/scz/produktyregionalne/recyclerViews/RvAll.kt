@@ -32,7 +32,16 @@ class RvAll(val items: ArrayList<String>, val context: Context) : RecyclerView.A
             holder.divider.visibility = View.GONE
         }
 
-        if (items[position].equals("Produkty mleczne") or items[position].equals("Produkty mięsne")) {
+        if (items[position].equals("Produkty mleczne")
+                or items[position].equals("Produkty mięsne")
+                or items[position].equals("Produkty rybołówstwa")
+                or items[position].equals("Warzywa i owoce")
+                or items[position].equals("Wyroby piekarnicze i cukiernicze")
+                or items[position].equals("Oleje i tłuszcze")
+                or items[position].equals("Miody")
+                or items[position].equals("Gotowe dania i potrawy")
+                or items[position].equals("Napoje")
+                or items[position].equals("Inne produkty")) {
             holder.item.visibility = View.GONE
             holder.divider.visibility = View.VISIBLE
             holder.divider.text = items[position]

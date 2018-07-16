@@ -8,8 +8,8 @@ class MainPresenter(view: MainContract.MvpView) : MainContract.Presenter {
         mView.initView()
     }
 
-    override fun loadItems(): ArrayList<String> {
-        return mModel.items()
+    override fun loadItems() {
+        mModel.items()
     }
 
     override fun onClickCategories() {

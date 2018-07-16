@@ -8,14 +8,12 @@ interface MainContract {
 
     interface Presenter {
         fun initPresenter()
-        fun loadItems(): ArrayList<String>
+        fun loadItems()
         fun onClickCategories()
     }
 
     interface Model {
-        fun items(): ArrayList<String>
+        fun items()
         fun categories(): ArrayList<String>
-        fun provincesQuantity(): ArrayList<String>
-        fun provinces(): ArrayList<String>
     }
 }

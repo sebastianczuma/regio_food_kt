@@ -1,51 +1,99 @@
 package com.scz.produktyregionalne.mainMVP
 
+import android.util.Log
+import org.greenrobot.eventbus.EventBus
+import retrofit2.Call
+import retrofit2.Callback
+
 class MainModel : MainContract.Model {
 
     override
-    fun items(): ArrayList<String> {
+    fun items() {
         val list: ArrayList<String> = ArrayList()
 
-        list.add("Produkty mleczne")
-        list.add("Ser zgorzelecki")
-        list.add("Ser kozi łomnicki")
-        list.add("Kamiennogórski ser pleśniowy")
-        list.add("Twaróg sudecki")
-        list.add("Produkty mięsne")
-        list.add("Świnka pieczona po zaciszańsku")
-        list.add("Słonina marynowana z Niemczy")
-        list.add("Mięso w kawałkach niemczańskie domowe")
-        list.add("Szynka wieprzowa niemczańska")
-        list.add("Kiełbasa niemczańska")
-        list.add("Kiełbasa galicjanka z Niemczy")
-        list.add("Przysmak wołyński z Niemczy")
-        list.add("Kiełbasa w słoiku z Przedgórza Sudeckiego")
+        val apiService = MainAPI.create()
+        val call = apiService.get()
+        Log.d("REQUEST", call.toString() + "")
 
-        return list
-    }
+        call.enqueue(object : Callback<ServerResponse> {
+            override fun onResponse(call: Call<ServerResponse>, response: retrofit2.Response<ServerResponse>) {
+                response.body()
 
-    override
-    fun provincesQuantity(): ArrayList<String> {
-        val list: ArrayList<String> = ArrayList()
+                if (response.body()?.produkty_mleczne != null) {
+                    list.add("Produkty mleczne")
+                    for (child in response.body()!!.produkty_mleczne) {
+                        list.add(child.name)
+                    }
+                }
 
-        list.add("49 produktów")
-        list.add("81 produktów")
-        list.add("204 produkty")
-        list.add("135 produktów")
-        list.add("73 produkty")
-        list.add("208 produktów")
-        list.add("128 produktów")
-        list.add("62 produkty")
-        list.add("227 produktów")
-        list.add("66 produktów")
-        list.add("178 produktów")
-        list.add("145 produktów")
-        list.add("92 produkty")
-        list.add("32 produkty")
-        list.add("93 produkty")
-        list.add("42 produkty")
+                if (response.body()?.produkty_miesne != null) {
+                    list.add("Produkty mięsne")
+                    for (child in response.body()!!.produkty_miesne) {
+                        list.add(child.name)
+                    }
+                }
 
-        return list
+                if (response.body()?.produkty_rybolostwa != null) {
+                    list.add("Produkty rybołówstwa")
+                    for (child in response.body()!!.produkty_rybolostwa) {
+                        list.add(child.name)
+                    }
+                }
+
+                if (response.body()?.warzywa_i_owoce != null) {
+                    list.add("Warzywa i owoce")
+                    for (child in response.body()!!.warzywa_i_owoce) {
+                        list.add(child.name)
+                    }
+                }
+
+                if (response.body()?.wyroby_piekarnicze_i_cukiernicze != null) {
+                    list.add("Wyroby piekarnicze i cukiernicze")
+                    for (child in response.body()!!.wyroby_piekarnicze_i_cukiernicze) {
+                        list.add(child.name)
+                    }
+                }
+
+                if (response.body()?.oleje_i_tluszcze != null) {
+                    list.add("Oleje i tłuszcze")
+                    for (child in response.body()!!.oleje_i_tluszcze) {
+                        list.add(child.name)
+                    }
+                }
+
+                if (response.body()?.miody != null) {
+                    list.add("Miody")
+                    for (child in response.body()!!.miody) {
+                        list.add(child.name)
+                    }
+                }
+
+                if (response.body()?.gotowe_dania_i_potrawy != null) {
+                    list.add("Gotowe dania i potrawy")
+                    for (child in response.body()!!.gotowe_dania_i_potrawy) {
+                        list.add(child.name)
+                    }
+                }
+                if (response.body()?.napoje != null) {
+                    list.add("Napoje")
+                    for (child in response.body()!!.napoje) {
+                        list.add(child.name)
+                    }
+                }
+
+                if (response.body()?.inne_produkty != null) {
+                    list.add("Inne produkty")
+                    for (child in response.body()!!.inne_produkty) {
+                        list.add(child.name)
+                    }
+                }
+
+                EventBus.getDefault().post(MessageEvent(list))
+            }
+
+            override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
+            }
+        })
     }
 
     override
@@ -65,29 +113,4 @@ class MainModel : MainContract.Model {
 
         return list
     }
-
-    override
-    fun provinces(): ArrayList<String> {
-        val list: ArrayList<String> = ArrayList()
-
-        list.add("dolnośląskie")
-        list.add("kujawsko-pomorskie")
-        list.add("lubelskie")
-        list.add("łódzkie")
-        list.add("lubuskie")
-        list.add("małopolskie")
-        list.add("mazowieckie")
-        list.add("opolskie")
-        list.add("podkarpackie")
-        list.add("podlaskie")
-        list.add("pomorskie")
-        list.add("śląskie")
-        list.add("świętokrzyskie")
-        list.add("warmińsko-mazurskie")
-        list.add("wielkopolskie")
-        list.add("zachodniopomorskie")
-
-        return list
-    }
-
 }

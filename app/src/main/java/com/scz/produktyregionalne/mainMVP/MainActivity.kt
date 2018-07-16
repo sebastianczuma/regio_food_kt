@@ -10,9 +10,27 @@ import com.scz.produktyregionalne.recyclerViews.RvAll
 import com.scz.produktyregionalne.recyclerViews.RvCategories
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.categories.view.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+
 
 class MainActivity : AppCompatActivity(), MainContract.MvpView {
     lateinit var mPresenter: MainPresenter
+
+    public override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    public override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+
+    @Subscribe
+    public fun onEvent(event: MessageEvent) {
+        recycler_view.adapter = RvAll(event.list, this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +42,8 @@ class MainActivity : AppCompatActivity(), MainContract.MvpView {
         categories.setOnClickListener {
             mPresenter.onClickCategories()
         }
+
+        mPresenter.loadItems()
     }
 
     override
@@ -31,7 +51,6 @@ class MainActivity : AppCompatActivity(), MainContract.MvpView {
         top.text = intent.getStringExtra("province")
 
         recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = RvAll(mPresenter.loadItems(), this)
     }
 
     override fun showCategories(categories: ArrayList<String>) {
