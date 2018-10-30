@@ -12,5 +12,5 @@ data class ServerResponse(
         val napoje: List<ResponseChild>,
         val inne_produkty: List<ResponseChild>)
 
-data class ResponseChild(val name: String, val date: String)
+data class ResponseChild(val name: String)
 
