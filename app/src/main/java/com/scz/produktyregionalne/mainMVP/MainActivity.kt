@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity(), MainContract.MvpView {
         mPresenter = MainPresenter(this)
         mPresenter.initPresenter()
 
-        categories.setOnClickListener {
+        /*categories.setOnClickListener {
             mPresenter.onClickCategories()
-        }
+        }*/
 
         mPresenter.loadProducts(intent.getStringExtra("province"))
     }
